@@ -41,7 +41,7 @@ namespace Monocraft.World
         public readonly Vector3 Position;
         private bool IsDrawing;
         private BoundingBox Trigger;
-        public int HashCode;
+        public Guid Guid;
 
         /// <param name="neighbours">
         ///     Arrayinformation:
@@ -60,7 +60,7 @@ namespace Monocraft.World
             generator.Generate(Position, Frames, neighbours, device, sp);
             Neighbours = neighbours;
 
-            this.HashCode = this.Position.GetHashCode();
+            this.Guid = Guid.NewGuid();
         }
 
         public WorldTile(Vector3 position, WorldTile[] neighbours, VisFrame[,,] frames)
@@ -72,7 +72,7 @@ namespace Monocraft.World
             Trigger = new BoundingBox(new Vector3(Position.X, 0, Position.Z),
                 new Vector3(Position.X + WORLD_TILE_WIDTH - 1, WORLD_TILE_HEIGHT, Position.Z + WORLD_TILE_WIDTH - 1));
 
-            this.HashCode = this.Position.GetHashCode();
+            this.Guid = Guid.NewGuid();
         }
 
         /// <summary>
