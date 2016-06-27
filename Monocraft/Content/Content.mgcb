@@ -129,3 +129,24 @@
 /processorParam:TextureFormat=Color
 /build:Textures/Frames/Border.png
 
+#begin Frames/Border.json
+/copy:Frames/Border.json
+
+#begin Frames/Dirt.json
+/copy:Frames/Dirt.json
+
+#begin Frames/Gras.json
+/copy:Frames/Gras.json
+
+#begin Frames/Sun.json
+/copy:Frames/Sun.json
+
+#begin Frames/Wood.json
+/copy:Frames/Wood.json
+
+#begin WorldGenerators/Default.json
+/copy:WorldGenerators/Default.json
+
+#begin WorldGenerators/Flat.json
+/copy:WorldGenerators/Flat.json
+

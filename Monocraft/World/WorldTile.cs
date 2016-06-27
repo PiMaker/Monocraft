@@ -60,6 +60,15 @@ namespace Monocraft.World
             Neighbours = neighbours;
         }
 
+        public WorldTile(Vector3 position, WorldTile[] neighbours, VisFrame[,,] frames)
+        {
+            this.Position = position;
+            this.Neighbours = neighbours;
+            this.Frames = frames;
+            Trigger = new BoundingBox(new Vector3(Position.X, 0, Position.Z),
+                new Vector3(Position.X + WORLD_TILE_WIDTH - 1, WORLD_TILE_HEIGHT, Position.Z + WORLD_TILE_WIDTH - 1));
+        }
+
         /// <summary>
         ///     Draws the worldtile.
         /// </summary>
@@ -69,7 +78,7 @@ namespace Monocraft.World
         /// <param name="cameraFrustum"></param>
         /// <param name="deepness"></param>
         public void Draw(GraphicsDevice device, Matrix projection, Matrix view, BoundingFrustum cameraFrustum,
-            byte deepness = 3)
+            byte deepness = 2)
         {
             IsDrawing = true;
 
